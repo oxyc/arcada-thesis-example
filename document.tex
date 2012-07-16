@@ -1,14 +1,30 @@
+% You need to set the \template command to the path where thesis.cls is
+% located, in this example the path is template/thesis.cls
 \newcommand{\template}{template}
+% Use the thesis document class.
+
+% Available Options:
+% * code -- If you'll include inline code
+% * swedish|english|finnsih -- choose your language for predefined strings,
+% hyphenations etc.
 \documentclass[code,swedish]{\template/thesis}
+
+% Here you can include packages of your liking, check the thesis.cls to know
+% what's already imported.
 \usepackage{rotating} % To rotate the bibtex appendix
 
+% No more logic after this
 \begin{document}
 
+% Your settings including your name, thesis title etc.
 \input{settings}
+
+% Preamble stuff
 \input{pages/title}
 \input{pages/abstract}
 \input{pages/tables}
 
+% Content
 \input{chapters/inledning}
 
 \input{chapters/thesis_class}
@@ -20,7 +36,10 @@
 \input{chapters/bibliography}
 \input{chapters/misc}
 
+% Include the reference list
 \bibliography{references}
+
+% Include your appendices
 \newpage
 \input{pages/appendix}
 
